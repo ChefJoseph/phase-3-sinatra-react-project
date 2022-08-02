@@ -15,6 +15,8 @@ class ApplicationController < Sinatra::Base
 
   get "/transactions" do
     {message: "Hello to my transactions!"}.to_json
+    transactions_all = Transaction.all 
+    transactions_all.to_json
   end
 
 end
