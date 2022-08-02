@@ -7,7 +7,6 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.integer :balance
       t.string :profile_pic
       t.string :friends
-      t.string :transactions
       t.integer :user_created_on
       
     

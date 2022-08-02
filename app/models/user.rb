@@ -1,8 +1,9 @@
 class User < ActiveRecord::Base
-    has_many :transactions
-    has_many :friendships
-
-
     
+    belongs_to :transactions
+    has_many :transactions
 
+    def all_trans
+     
+    end
 end

@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2022_07_29_192113) do
 
   create_table "transactions", force: :cascade do |t|
     t.datetime "date_time"
-    t.integer "amount"
+    t.float "amount"
     t.string "description"
     t.integer "sender_id"
     t.integer "receiver_id"
@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 2022_07_29_192113) do
     t.integer "balance"
     t.string "profile_pic"
     t.string "friends"
-    t.string "transactions"
     t.integer "user_created_on"
   end
 

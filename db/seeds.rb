@@ -16,7 +16,7 @@ user10 = User.create(name: "Shawn", handle:@CrippinAintEasy, balance: 250, profi
 
 # Some basic Transaction
 Transaction.create!(sender_id: user1.id,
-                receiver_id: user3.id,
+                receiver_id: user3.id, 
                 amount: 31.4,
                 description: 'Thanks for the cake! :birthday:')
 Transaction.create!(sender_id: user4.id,
