@@ -18,7 +18,8 @@ user10 = User.create(name: "Shawn", handle:@CrippinAintEasy, balance: 250, profi
 Transaction.create!(sender_id: user1.id,
                 receiver_id: user3.id, 
                 amount: 31.4,
-                description: 'Thanks for the cake! :birthday:')
+                description: 'Thanks for the cake! :birthday:',
+                date_time: "05/30/1986")
 Transaction.create!(sender_id: user4.id,
                 receiver_id: user5.id,
                 amount: 6.9,
