@@ -10,7 +10,8 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/users" do
-    {message: "Hello to my users!"}.to_json
+    users_elmo = User.first
+    users_elmo.to_json
   end
 
 
@@ -33,7 +34,7 @@ end
   end
  
   get "/transaction_sender" do
-    transaction_sender = Transaction.first.sender
+    transaction_sender = Transaction.third.sender
     transaction_sender.to_json
   end
 
@@ -42,4 +43,12 @@ end
     transaction_receiver.to_json
   end
 
+  # patch "/transactions/:id/amount" do
+  #   begin
+  #     found_trans = User.find(param[:id]).amount
+  #     found_trans.update(params)
+  #     found_trans.to_json
+  #   end
+  # end
+  
 end

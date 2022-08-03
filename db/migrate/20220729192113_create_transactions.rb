@@ -8,6 +8,7 @@ class CreateTransactions < ActiveRecord::Migration[6.1]
       t.boolean :like
       t.references :sender, references: :users, index: true
       t.references :receiver, references: :users, index: true
+      t.string :comments
 
     end
     

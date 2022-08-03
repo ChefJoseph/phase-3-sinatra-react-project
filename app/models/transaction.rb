@@ -5,6 +5,11 @@ class Transaction < ActiveRecord::Base
 
     def people_involved
       return {sender: sender, receiver: receiver}
+      
     end
     
+    def sender_name
+      trans_id = self.find(self.id)
+      trans_id.sender.name
+    end
 end

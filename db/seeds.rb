@@ -11,22 +11,22 @@ user6 = User.create(name: "Bernie", handle: @BigPimpin, balance: 500, profile_pi
 user7 = User.create(name: "Greg", handle:@DaTrashMan, balance: 10, profile_pic: "https://static.wikia.nocookie.net/muppet/images/f/f6/Oscarthegrouchy.jpg/revision/latest?cb=20160909061029")
 user8 = User.create(name: "Paul", handle:@CrippinAintEasy, balance: 250, profile_pic: "https://aspenideasfestival.imgix.net/574ff348-fd31-44ec-834e-356fe265e17d/Grover_SH2018.jpg?auto=compress%2Cformat&fit=min&fm=jpg&h=290&q=80&rect=0%2C0%2C1000%2C1000&w=290")
 user9 = User.create(name: "Shawn", handle:@CrippinAintEasy, balance: 250, profile_pic: "https://aspenideasfestival.imgix.net/574ff348-fd31-44ec-834e-356fe265e17d/Grover_SH2018.jpg?auto=compress%2Cformat&fit=min&fm=jpg&h=290&q=80&rect=0%2C0%2C1000%2C1000&w=290")
-user10 = User.create(name: "Shawn", handle:@CrippinAintEasy, balance: 250, profile_pic: "https://aspenideasfestival.imgix.net/574ff348-fd31-44ec-834e-356fe265e17d/Grover_SH2018.jpg?auto=compress%2Cformat&fit=min&fm=jpg&h=290&q=80&rect=0%2C0%2C1000%2C1000&w=290")
+user10 = User.create(name: "Jimbo", handle:@CrippinAintEasy, balance: 250, profile_pic: "https://aspenideasfestival.imgix.net/574ff348-fd31-44ec-834e-356fe265e17d/Grover_SH2018.jpg?auto=compress%2Cformat&fit=min&fm=jpg&h=290&q=80&rect=0%2C0%2C1000%2C1000&w=290")
 
 
 # Some basic Transaction
 Transaction.create!(sender_id: user1.id,
                 receiver_id: user3.id, 
-                amount: 31.4,
+                amount: 31.40,
                 description: 'Thanks for the cake! :birthday:',
                 date_time: "05/30/1986")
 Transaction.create!(sender_id: user4.id,
                 receiver_id: user5.id,
-                amount: 6.9,
+                amount: 6.90,
                 description: 'This is what I owe you from the beers')
 Transaction.create!(sender_id: user6.id,
                 receiver_id: user1.id,
-                amount: 4.2,
+                amount: 4.20,
                 description: 'Welp')
 Transaction.create!(sender_id: user6.id,
                 receiver_id: user2.id,
@@ -34,7 +34,7 @@ Transaction.create!(sender_id: user6.id,
                 description: 'Happy birthday buddy!')
 Transaction.create!(sender_id: user5.id,
                 receiver_id: user3.id,
-                amount: 88.8,
+                amount: 88.80,
                 description: 'Hello :wave:')
 Transaction.create!(sender_id: user2.id,
                 receiver_id: user6.id,
