@@ -16,17 +16,11 @@ class ApplicationController < Sinatra::Base
 
 
   get "/transactions" do
-    {message: "Hello to my transactions!"}.to_json
-    transactions_all = Transaction.all 
-    transactions_all.to_json
+    transactions_all = Transaction.all.order(id: :desc)
+
+    transactions_all.to_json(:include => [:receiver, :sender])
   end
 
-  get "/transactions/:id" do
-	begin
-		found_transaction = Transaction.find(params[:id])
-		found_transaction.to_json
-	end
-end
 
   post "/transactions" do
     create_transactions = Transaction.create(params)
@@ -43,12 +37,31 @@ end
     transaction_receiver.to_json
   end
 
-  # patch "/transactions/:id/amount" do
-  #   begin
-  #     found_trans = User.find(param[:id]).amount
-  #     found_trans.update(params)
-  #     found_trans.to_json
-  #   end
+  # patch "/transactions/:id" do
+    
+  #     add_comments = Transaction.find(params[:id])
+  #     add_comments.update(
+  #       comments: params[:comments]
+  #       )
+  #     add_comments.to_json
   # end
-  
+
+  patch "transaction/:id" do
+    find_trans = Transaction.find(params[:id])
+    find_trans.update(params)
+  end
+
+  delete "/transactions/:id" do
+    begin 
+      found_transaction = Transaction.find(params[:id])
+      if found_transaction.comments
+        found_transaction.delete
+      else
+      {message:"No comment here"}.to_json
+      end
+    rescue
+    {error:"Couldn't find transaction"}.to_json
+    end
+  end
+
 end

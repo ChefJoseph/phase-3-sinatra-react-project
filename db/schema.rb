@@ -22,9 +22,11 @@ ActiveRecord::Schema.define(version: 2022_07_29_192113) do
   end
 
   create_table "transactions", force: :cascade do |t|
-    t.datetime "date_time"
+    t.date "date_time"
     t.float "amount"
     t.string "description"
+    t.string "comments"
+    t.boolean "like"
     t.integer "sender_id"
     t.integer "receiver_id"
     t.index ["receiver_id"], name: "index_transactions_on_receiver_id"
