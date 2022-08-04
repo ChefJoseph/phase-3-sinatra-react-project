@@ -53,16 +53,8 @@ class ApplicationController < Sinatra::Base
   end
 
   delete "/transactions/:id" do
-    begin 
       found_transaction = Transaction.find(params[:id])
-      if found_transaction.comments
-        found_transaction.delete
-      else
-      {message:"No comment here"}.to_json
-      end
-    rescue
-    {error:"Couldn't find transaction"}.to_json
-    end
+      found_transaction.destroy
   end
 
 end
