@@ -46,9 +46,10 @@ class ApplicationController < Sinatra::Base
   #     add_comments.to_json
   # end
 
-  patch "transaction/:id" do
+  patch "/transactions/:id" do
     find_trans = Transaction.find(params[:id])
     find_trans.update(params)
+    find_trans.to_json
   end
 
   delete "/transactions/:id" do
