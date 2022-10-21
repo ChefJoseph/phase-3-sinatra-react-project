@@ -10,10 +10,14 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/users" do
-    users_elmo = User.first
+    users_elmo = User.all
     users_elmo.to_json
   end
 
+  post "/users" do
+    create_users = User.create(params)
+    create_users.to_json
+  end
 
   get "/transactions" do
     transactions_all = Transaction.all.order(id: :desc)
