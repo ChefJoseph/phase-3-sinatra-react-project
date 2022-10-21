@@ -13,6 +13,10 @@ class ApplicationController < Sinatra::Base
     users_elmo = User.all
     users_elmo.to_json
   end
+  get "/users/1" do
+    users_elmo = User.first
+    users_elmo.to_json
+  end
 
   post "/users" do
     create_users = User.create(params)
